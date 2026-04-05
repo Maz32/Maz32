@@ -1,0 +1,216 @@
+<svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .step-box { transition: all 0.3s; }
+      .step-1 { animation: fadeSlideIn 0.6s ease-out 0.1s both; }
+      .step-2 { animation: fadeSlideIn 0.6s ease-out 0.4s both; }
+      .step-3 { animation: fadeSlideIn 0.6s ease-out 0.7s both; }
+      .step-4 { animation: fadeSlideIn 0.6s ease-out 1.0s both; }
+      .step-5 { animation: fadeSlideIn 0.6s ease-out 1.3s both; }
+      .arrow-1 { animation: drawArrow 0.4s ease-out 0.65s both; }
+      .arrow-2 { animation: drawArrow 0.4s ease-out 0.95s both; }
+      .arrow-3 { animation: drawArrow 0.4s ease-out 1.25s both; }
+      .arrow-4 { animation: drawArrow 0.4s ease-out 1.55s both; }
+      .pulse-dot { animation: pulse 2s ease-in-out infinite; }
+      .pulse-dot-2 { animation: pulse 2s ease-in-out 0.4s infinite; }
+      .pulse-dot-3 { animation: pulse 2s ease-in-out 0.8s infinite; }
+      .pulse-dot-4 { animation: pulse 2s ease-in-out 1.2s infinite; }
+      .pulse-dot-5 { animation: pulse 2s ease-in-out 1.6s infinite; }
+      .glow-line { animation: glowPulse 3s ease-in-out infinite; }
+      .badge { animation: fadeSlideIn 0.5s ease-out 1.8s both; }
+
+      @keyframes fadeSlideIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes drawArrow {
+        from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+        to   { opacity: 1; transform: scaleX(1); }
+      }
+      @keyframes pulse {
+        0%, 100% { r: 5; opacity: 1; }
+        50%       { r: 8; opacity: 0.5; }
+      }
+      @keyframes glowPulse {
+        0%, 100% { opacity: 0.3; }
+        50%       { opacity: 0.8; }
+      }
+      @keyframes flowDot {
+        0%   { offset-distance: 0%;   opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+    </style>
+
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#0a1a12"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#0f2a1f"/>
+      <stop offset="100%" style="stop-color:#0a1a12"/>
+    </linearGradient>
+    <linearGradient id="cardFinal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#00b96b22"/>
+      <stop offset="100%" style="stop-color:#00d4aa11"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#00b96b;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowHead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#00d4aa"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="320" fill="url(#bg)" rx="12"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#00d4aa" stroke-width="0.5">
+    <line x1="0" y1="80"  x2="900" y2="80"/>
+    <line x1="0" y1="160" x2="900" y2="160"/>
+    <line x1="0" y1="240" x2="900" y2="240"/>
+  </g>
+
+  <!-- Section header -->
+  <text x="450" y="32" font-family="'Courier New',monospace" font-size="11" fill="#00d4aa" text-anchor="middle" letter-spacing="4" opacity="0.7">MY DELIVERY PROCESS</text>
+  <line x1="150" y1="36" x2="340" y2="36" stroke="#00d4aa" stroke-width="0.5" opacity="0.3"/>
+  <line x1="560" y1="36" x2="750" y2="36" stroke="#00d4aa" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ─── STEP 1: AUDIT ─── -->
+  <g class="step-1">
+    <rect x="18" y="55" width="148" height="190" rx="10" fill="url(#card1)" stroke="#00b96b" stroke-width="1.2" opacity="0.9"/>
+    <!-- Step number circle -->
+    <circle cx="92" cy="82" r="18" fill="none" stroke="#00b96b" stroke-width="1.5"/>
+    <text x="92" y="87" font-family="'Courier New',monospace" font-size="14" fill="#00d4aa" text-anchor="middle" font-weight="700" filter="url(#glow)">01</text>
+    <!-- Icon: magnifier -->
+    <text x="92" y="118" font-family="Arial" font-size="22" text-anchor="middle">🔍</text>
+    <!-- Title -->
+    <text x="92" y="142" font-family="'Courier New',monospace" font-size="11" fill="#00d4aa" text-anchor="middle" font-weight="700" letter-spacing="2">AUDIT</text>
+    <!-- Divider -->
+    <line x1="38" y1="150" x2="146" y2="150" stroke="#00b96b" stroke-width="0.5" opacity="0.4"/>
+    <!-- Description -->
+    <text x="92" y="168" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">Review current GHL</text>
+    <text x="92" y="181" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">setup, identify gaps,</text>
+    <text x="92" y="194" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">document full scope</text>
+    <!-- Pulse dot -->
+    <circle class="pulse-dot" cx="92" cy="228" r="5" fill="#00b96b" filter="url(#glow)"/>
+  </g>
+
+  <!-- ─── ARROW 1 ─── -->
+  <g class="arrow-1">
+    <line x1="170" y1="150" x2="186" y2="150" stroke="url(#arrowGrad)" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+    <!-- flowing dot -->
+    <circle cx="178" cy="150" r="2.5" fill="#00d4aa" opacity="0.8">
+      <animate attributeName="cx" values="170;186;170" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ─── STEP 2: ARCHITECTURE ─── -->
+  <g class="step-2">
+    <rect x="190" y="55" width="148" height="190" rx="10" fill="url(#card1)" stroke="#00b96b" stroke-width="1.2" opacity="0.9"/>
+    <circle cx="264" cy="82" r="18" fill="none" stroke="#00b96b" stroke-width="1.5"/>
+    <text x="264" y="87" font-family="'Courier New',monospace" font-size="14" fill="#00d4aa" text-anchor="middle" font-weight="700" filter="url(#glow)">02</text>
+    <text x="264" y="118" font-family="Arial" font-size="22" text-anchor="middle">🏗️</text>
+    <text x="264" y="142" font-family="'Courier New',monospace" font-size="9.5" fill="#00d4aa" text-anchor="middle" font-weight="700" letter-spacing="1.5">ARCHITECTURE</text>
+    <line x1="210" y1="150" x2="318" y2="150" stroke="#00b96b" stroke-width="0.5" opacity="0.4"/>
+    <text x="264" y="168" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">Design system logic</text>
+    <text x="264" y="181" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">before touching a</text>
+    <text x="264" y="194" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">single workflow node</text>
+    <circle class="pulse-dot-2" cx="264" cy="228" r="5" fill="#00b96b" filter="url(#glow)"/>
+  </g>
+
+  <!-- ─── ARROW 2 ─── -->
+  <g class="arrow-2">
+    <line x1="342" y1="150" x2="358" y2="150" stroke="url(#arrowGrad)" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+    <circle cx="350" cy="150" r="2.5" fill="#00d4aa" opacity="0.8">
+      <animate attributeName="cx" values="342;358;342" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ─── STEP 3: BUILD ─── -->
+  <g class="step-3">
+    <rect x="362" y="55" width="148" height="190" rx="10" fill="url(#card1)" stroke="#00b96b" stroke-width="1.2" opacity="0.9"/>
+    <circle cx="436" cy="82" r="18" fill="none" stroke="#00b96b" stroke-width="1.5"/>
+    <text x="436" y="87" font-family="'Courier New',monospace" font-size="14" fill="#00d4aa" text-anchor="middle" font-weight="700" filter="url(#glow)">03</text>
+    <text x="436" y="118" font-family="Arial" font-size="22" text-anchor="middle">⚙️</text>
+    <text x="436" y="142" font-family="'Courier New',monospace" font-size="11" fill="#00d4aa" text-anchor="middle" font-weight="700" letter-spacing="2">BUILD</text>
+    <line x1="382" y1="150" x2="490" y2="150" stroke="#00b96b" stroke-width="0.5" opacity="0.4"/>
+    <text x="436" y="168" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">Version-controlled</text>
+    <text x="436" y="181" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">snapshots + fully</text>
+    <text x="436" y="194" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">documented logic</text>
+    <circle class="pulse-dot-3" cx="436" cy="228" r="5" fill="#00b96b" filter="url(#glow)"/>
+  </g>
+
+  <!-- ─── ARROW 3 ─── -->
+  <g class="arrow-3">
+    <line x1="514" y1="150" x2="530" y2="150" stroke="url(#arrowGrad)" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+    <circle cx="522" cy="150" r="2.5" fill="#00d4aa" opacity="0.8">
+      <animate attributeName="cx" values="514;530;514" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ─── STEP 4: STRESS TEST ─── -->
+  <g class="step-4">
+    <rect x="534" y="55" width="148" height="190" rx="10" fill="url(#card1)" stroke="#00b96b" stroke-width="1.2" opacity="0.9"/>
+    <circle cx="608" cy="82" r="18" fill="none" stroke="#00b96b" stroke-width="1.5"/>
+    <text x="608" y="87" font-family="'Courier New',monospace" font-size="14" fill="#00d4aa" text-anchor="middle" font-weight="700" filter="url(#glow)">04</text>
+    <text x="608" y="118" font-family="Arial" font-size="22" text-anchor="middle">🧪</text>
+    <text x="608" y="142" font-family="'Courier New',monospace" font-size="9" fill="#00d4aa" text-anchor="middle" font-weight="700" letter-spacing="1.5">STRESS TEST</text>
+    <line x1="554" y1="150" x2="662" y2="150" stroke="#00b96b" stroke-width="0.5" opacity="0.4"/>
+    <text x="608" y="168" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">Simulate edge cases,</text>
+    <text x="608" y="181" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">broken paths, and</text>
+    <text x="608" y="194" font-family="Arial,sans-serif" font-size="9.5" fill="#8fbc9a" text-anchor="middle">high-volume load</text>
+    <circle class="pulse-dot-4" cx="608" cy="228" r="5" fill="#00b96b" filter="url(#glow)"/>
+  </g>
+
+  <!-- ─── ARROW 4 ─── -->
+  <g class="arrow-4">
+    <line x1="686" y1="150" x2="702" y2="150" stroke="url(#arrowGrad)" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+    <circle cx="694" cy="150" r="2.5" fill="#00d4aa" opacity="0.8">
+      <animate attributeName="cx" values="686;702;686" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ─── STEP 5: HANDOFF (highlighted as final) ─── -->
+  <g class="step-5">
+    <rect x="706" y="55" width="168" height="190" rx="10" fill="url(#cardFinal)" stroke="#00d4aa" stroke-width="2"/>
+    <!-- Glow border effect -->
+    <rect x="706" y="55" width="168" height="190" rx="10" fill="none" stroke="#00d4aa" stroke-width="4" opacity="0.1" class="glow-line"/>
+    <circle cx="790" cy="82" r="18" fill="#00b96b22" stroke="#00d4aa" stroke-width="1.5"/>
+    <text x="790" y="87" font-family="'Courier New',monospace" font-size="14" fill="#00d4aa" text-anchor="middle" font-weight="700" filter="url(#softGlow)">05</text>
+    <text x="790" y="118" font-family="Arial" font-size="22" text-anchor="middle">🔑</text>
+    <text x="790" y="142" font-family="'Courier New',monospace" font-size="11" fill="#00d4aa" text-anchor="middle" font-weight="700" letter-spacing="2" filter="url(#glow)">HANDOFF</text>
+    <line x1="726" y1="150" x2="854" y2="150" stroke="#00d4aa" stroke-width="0.5" opacity="0.5"/>
+    <text x="790" y="168" font-family="Arial,sans-serif" font-size="9.5" fill="#a3f7d4" text-anchor="middle">Video walkthrough</text>
+    <text x="790" y="181" font-family="Arial,sans-serif" font-size="9.5" fill="#a3f7d4" text-anchor="middle">+ full docs. You own</text>
+    <text x="790" y="194" font-family="Arial,sans-serif" font-size="9.5" fill="#a3f7d4" text-anchor="middle" font-weight="700">everything.</text>
+    <circle class="pulse-dot-5" cx="790" cy="228" r="5" fill="#00d4aa" filter="url(#softGlow)"/>
+  </g>
+
+  <!-- ─── BOTTOM POLICY BADGE ─── -->
+  <g class="badge">
+    <rect x="240" y="265" width="420" height="38" rx="19" fill="none" stroke="#00d4aa" stroke-width="1" opacity="0.5"/>
+    <rect x="240" y="265" width="420" height="38" rx="19" fill="#00d4aa" fill-opacity="0.05"/>
+    <text x="450" y="280" font-family="'Courier New',monospace" font-size="9" fill="#00d4aa" text-anchor="middle" letter-spacing="2" opacity="0.7">POLICY</text>
+    <text x="450" y="295" font-family="Arial,sans-serif" font-size="11" fill="#a3f7d4" text-anchor="middle">No lock-in. No dependency on me. You get the keys.</text>
+  </g>
+
+  <!-- Corner decorations -->
+  <circle cx="14" cy="14" r="3" fill="#00d4aa" opacity="0.3"/>
+  <circle cx="886" cy="14" r="3" fill="#00d4aa" opacity="0.3"/>
+</svg>
