@@ -107,24 +107,9 @@ Garbage leads waste sales team time. I build intake systems that pre-qualify bef
 
 Every engagement follows the same five-step framework. No surprises, no black boxes.
 
-```
-STEP 1 — AUDIT
-  Review your current GHL setup, identify conversion gaps, document scope
-
-STEP 2 — ARCHITECTURE
-  Design the system logic before touching a single workflow node
-
-STEP 3 — BUILD
-  Execute with version-controlled snapshots and documented logic trees
-
-STEP 4 — STRESS TEST
-  Simulate edge cases, broken paths, and high-volume load before go-live
-
-STEP 5 — HANDOFF
-  Full video walkthrough plus written documentation — you own everything
-```
-
-**Policy:** No lock-in. No dependency on me to keep it running. You get the keys.
+<div align="center">
+<img src="./assets/process.svg" alt="Mazharul Islam GoHighLevel Delivery Process: Audit, Architecture, Build, Stress Test, Handoff" width="100%"/>
+</div>
 
 ---
 
